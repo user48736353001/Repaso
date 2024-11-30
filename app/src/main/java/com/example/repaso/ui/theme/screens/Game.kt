@@ -58,7 +58,7 @@ fun Game (navController:NavHostController){
 @Composable
 fun bodyContent( modifier: Modifier = Modifier,navController: NavHostController) {
     var currentStep by remember { mutableStateOf(1)}
-    var result = 1
+    var result1 = 1
     var result2 = 1
 
     Column(
@@ -73,7 +73,7 @@ fun bodyContent( modifier: Modifier = Modifier,navController: NavHostController)
                 Row(horizontalArrangement = Arrangement.Center) {
 
                     Button(onClick = {
-                        result = (1..13).random()
+                        result1 = (1..13).random()
                         currentStep = 2
                     }
                     ) {
@@ -82,7 +82,7 @@ fun bodyContent( modifier: Modifier = Modifier,navController: NavHostController)
                     Text(text = "No ha robado aún")
                 }
                 Row(horizontalArrangement = Arrangement.Center) {
-                    Button(onClick = {result = (1..13).random()
+                    Button(onClick = {result2 = (1..13).random()
                     }
                     ) {
                         Text(text = "Area de juego de Jugador 2")
@@ -97,15 +97,15 @@ fun bodyContent( modifier: Modifier = Modifier,navController: NavHostController)
             2->{
                 Row(horizontalArrangement = Arrangement.Center) {
                     Button(onClick = {
-                        result = (1..13).random()
-                        currentStep= 3
+
                     }
                     ) {
                         Text(text = "Area de juego de Jugador 1")
                     }
-                        Text(text = "Su carta es $result")
+                        Text(text = "Su carta es $result1")
                     Row(horizontalArrangement = Arrangement.Center) {
-                        Button(onClick = {result = (1..13).random() }
+                        Button(onClick = {result2 = (1..13).random()
+                            currentStep= 3}
                         ) {
                             Text(text = "Area de juego de Jugador 2")
                         }
@@ -125,9 +125,9 @@ fun bodyContent( modifier: Modifier = Modifier,navController: NavHostController)
                     Text(text = "Area de juego de Jugador 1")
                 }
 
-                Text(text = "Su carta es $result")
+                Text(text = "Su carta es $result1")
                 Row(horizontalArrangement = Arrangement.Center) {
-                    Button(onClick = {result = (1..13).random() }
+                    Button(onClick = {result2 = (1..13).random() }
                     ) {
                         Text(text = "Area de juego de Jugador 2")
                     }
